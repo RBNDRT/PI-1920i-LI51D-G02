@@ -1,0 +1,13 @@
+Server
+	- lança servidor
+	- configura rotas
+	- configura dependencias
+
+web-api
+	- recolhe dados
+	- invoca service
+	- traduz resposta para http
+
+
+Service
+	- atende pedidos de forma independente do http
