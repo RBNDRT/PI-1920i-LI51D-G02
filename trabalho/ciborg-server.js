@@ -4,12 +4,12 @@ const PORT = 8888
 
 const http = require('http')
 
-const router = require('./router.js')
+const router = require('./ciborg-router.js')
 
-const itemApi = require('./item-web-api')
+const ciborgApi = require('./ciborg-web-api')
 
-router.get ('/items', itemApi.getAllItems)
-router.get ('/items/{id}',itemApi.getItem)
+router.get ('/items', ciborgApi.getAllItems)
+router.get ('/items/{id}',ciborgApi.getItem)
 
 
 http.createServer(router).listen(process.argv[2]||PORT)
