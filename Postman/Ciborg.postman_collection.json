@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "0007d98e-f2d2-4425-a135-4c04d0d84192",
+		"name": "Ciborg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Games by Popularity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.boardgameatlas.com/api/search?client_id=RCoySl8QNG&order_by=popularity",
+					"protocol": "https",
+					"host": [
+						"www",
+						"boardgameatlas",
+						"com"
+					],
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "RCoySl8QNG"
+						},
+						{
+							"key": "username",
+							"value": "trentellingsen",
+							"disabled": true
+						},
+						{
+							"key": "order_by",
+							"value": "popularity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Games by a name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.boardgameatlas.com/api/lists?client_id=RCoySl8QNG&username=trentellingsen",
+					"protocol": "https",
+					"host": [
+						"www",
+						"boardgameatlas",
+						"com"
+					],
+					"path": [
+						"api",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "RCoySl8QNG"
+						},
+						{
+							"key": "username",
+							"value": "trentellingsen"
+						},
+						{
+							"key": "order_by",
+							"value": "popularity",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Get All games by username (given in URL)"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
