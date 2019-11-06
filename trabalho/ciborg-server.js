@@ -1,46 +1,25 @@
-'Use strict'
-
-const PORT = 8888
-
-const http = require('http')
-
+'use strict';
+const http = require('http');
 const router = require('./ciborg-router.js')
+const port = 8888;
 
-const ciborgApi = require('./ciborg-web-api')
+const ciborgApiModule = require('./ciborg-web-api.js')
 
-router.get ('/items', ciborgApi.getAllItems)
-router.get ('/items/{id}',ciborgApi.getItem)
+const ciborgApi = ciborgApiModule()
 
-
-http.createServer(router).listen(process.argv[2]||PORT)
-
-
-
-/*
-const server = http.createServer()
-
-server.on('request', handleRequest)
-
-
-function handleRequest(req, rsp) {
-  console.log(`Request received for ${req.url} with method ${req.method}`)
-
-  let data = ""
-
-  req.on('data', chunk => data += chunk.toString())
-  req.on('end', processBodyAndReply)
-  
-
-  function processBodyAndReply() {
-    console.log(`Received data: ${data}`)
-
-    rsp.setHeader("Content-type", "text/plain")
-    rsp.end(`SLB`)
-  }
-
-
- 
+/** *START TEST* */
+const xpto = function(req, res) {
+  console.log("funcionou")
+  res.end("funcionou2")
 }
+router.get ('test', xpto)
+/** *END TEST* */
 
-server.listen(PORT, () => console.log(`Server listening on port ${PORT}`))
- */
+router.get ('/items', ciborgApi.getAllGames)
+router.get ('/items/{id}',ciborgApi.getGame)
+
+const server = http.createServer(router.processRequest);
+
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`)
+})

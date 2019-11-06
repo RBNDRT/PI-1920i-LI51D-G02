@@ -11,3 +11,16 @@ web-api
 
 Service
 	- atende pedidos de forma independente do http
+
+
+
+*/ ****** COMMANDS ****** */
+
+>Run httprequest with curl: 
+$ curl -v -H "Accept: application/json" -H "Content-type:
+application/json" -X POST -d ' 
+{"customer_id":"812122", "event":"add_to_cart", "email": "abc@def.com", }' 
+-u 9f4d7f5445e7: https://api.myapp.com/api/event
+
+>Run .js file
+$ node file.js

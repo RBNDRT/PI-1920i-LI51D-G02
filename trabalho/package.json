@@ -1,0 +1,16 @@
+{
+    "name": "ciborg",
+    "version": "1.0.0",
+    "description": "",
+    "main": "ciborg-server.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "request": "^2.88.0"
+    }
+  }
+  

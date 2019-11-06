@@ -1,20 +1,26 @@
 'use strict'
 
-const storage = require('./test-storage');
+//const storage = require('./ciborg-storage');
 
-module.exports = {
-    getAllGames: function(done) {
+module.exports = function (storage) {
+    return {
+        getAllGames: getAllGames,
+        addGame: addGame
+    }
+
+    function getAllGames(done) {
+        console.log('service - getAllGames!');
         storage.search('games', games => {
             done(games || []);
         })
-    },
+    }
 
-    addGame: function(game, done) {
-        if(game && game.name) {
+    function addGame(game, done) {
+        if (game && game.name) {
             storage.add(game.name, game, game =>
                 done(undefined, game.id));
         }
-        else 
-            setImmediate(() => { done('Invalid req!', -1);});
+        else
+            setImmediate(() => { done('Invalid req!', -1); });
     }
 }
